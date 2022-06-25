@@ -15,6 +15,10 @@
 #define IDMORE		8011
 #define IDD_DIALOG3		8012
 #define MENU1		8013
+#define ID_LAB_INFOABOUTLABS		8014
+#define ID_EXTRAINFO_ABOUTPROGRAM		8015
+#define ID_EXTRAINFO_AUTHORS		8016
+#define ID_EXTRAINFO_TIME		8017
 
 #define IDC_MYICON                      2
 #define IDD_SPRO_DIALOG                 102

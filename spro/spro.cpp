@@ -179,49 +179,49 @@ LRESULT CALLBACK WndProc(
 			break;
 		case ID_LB_1:
 			CheckWin();
-			ShowLab1(hWnd, 0, 0, 910, 450);
+			ShowLab1(hWnd, 0, 0, 1860, 1040);
 			last = lb1;
 			Destroyed = false;
 
 			break;
 		case ID_LB_2:
 			CheckWin();
-			ShowLab2(hWnd, 0, 0, 910, 450);
+			ShowLab2(hWnd, 0, 0, 1860, 1040);
 			last = lb2; Destroyed = false;
 			break;
 		case ID_LB_3:
 			CheckWin();
-			ShowLab3(hWnd, 0, 0, 910, 450);
+			ShowLab3(hWnd, 0, 0, 1860, 1040);
 			last = lb3; Destroyed = false;
 			break;
 		case ID_LB_4:
 			CheckWin();
-			ShowLab4(hWnd, 0, 0, 910, 450);
+			ShowLab4(hWnd, 0, 0, 1860, 1040);
 			last = lb4; Destroyed = false;
 			break;
 		case ID_LB_5:
 			CheckWin();
-			ShowLab5(hWnd, 0, 0, 910, 450);
+			ShowLab5(hWnd, 0, 0, 1860, 1040);
 			last = lb5; Destroyed = false;
 			break;
 		case ID_LB_6:
 			CheckWin();
-			ShowLab6(hWnd, 0, 0, 910, 450);
+			ShowLab6(hWnd, 0, 0, 1860, 1040);
 			last = lb6; Destroyed = false;
 			break;
 		case ID_LB_7:
 			CheckWin();
-			ShowLab7(hWnd, 0, 0, 910, 450);
+			ShowLab7(hWnd, 0, 0, 1860, 1040);
 			last = lb7; Destroyed = false;
 			break;
 		case ID_LB_8:
 			CheckWin();
-			ShowLab8(hWnd, 0, 0, 910, 450);
+			ShowLab8(hWnd, 0, 0, 1860, 1040);
 			last = lb8; Destroyed = false;
 			break;
 		case ID_LB_9:
 			CheckWin();
-			ShowLab9(hWnd, 0, 0, 910, 450);
+			ShowLab9(hWnd, 0, 0, 1860, 1040);
 			last = lb9; Destroyed = false;
 			break;
 		case ID_BACK:
@@ -239,11 +239,11 @@ LRESULT CALLBACK WndProc(
 
 			int index = SendMessage(comboBoxA, CB_GETCURSEL, 0, 0);
 			if (index == 0)
-				ShowLab1(hWnd, 0, 24, 760, 376);
+				ShowLab1(hWnd, 0, 24, 1860 / 2, 1040 / 2);
 			else if (index == 1)
-				ShowLab2(hWnd, 0, 24, 760, 376);
+				ShowLab2(hWnd, 0, 24, 1860 / 2, 1040 / 2);
 			else
-				ShowLab3(hWnd, 0, 24, 760, 376);
+				ShowLab3(hWnd, 0, 24, 1860 / 2, 1040 / 2);
 			break;
 		}
 		case COMBOBOX_B_LAB_CHOSEN:
@@ -255,9 +255,9 @@ LRESULT CALLBACK WndProc(
 
 			int index = SendMessage(comboBoxB, CB_GETCURSEL, 0, 0);
 			if (index == 0)
-				ShowLab4(hWnd, 761, 24, 775, 376);
+				ShowLab4(hWnd, 1860 / 2, 24, 1860 / 2, 1040 / 2);
 			else
-				ShowLab5(hWnd, 761, 24, 775, 376);
+				ShowLab5(hWnd, 1860 / 2, 24, 1860 / 2, 1040 / 2);
 			break;
 		}
 		case COMBOBOX_C_LAB_CHOSEN:
@@ -269,9 +269,9 @@ LRESULT CALLBACK WndProc(
 
 			int index = SendMessage(comboBoxC, CB_GETCURSEL, 0, 0);
 			if (index == 0)
-				ShowLab6(hWnd, 0, 424, 760, 376);
+				ShowLab6(hWnd, 0, 1040 / 2, 1860 / 2, 1040 / 2);
 			else
-				ShowLab7(hWnd, 0, 424, 760, 376);
+				ShowLab7(hWnd, 0, 1040 / 2, 1860 / 2, 1040 / 2);
 			break;
 		}
 		case COMBOBOX_D_LAB_CHOSEN:
@@ -283,11 +283,32 @@ LRESULT CALLBACK WndProc(
 
 			int index = SendMessage(comboBoxD, CB_GETCURSEL, 0, 0);
 			if (index == 0)
-				ShowLab8(hWnd, 761, 424, 775, 376);
+				ShowLab8(hWnd, 1860 / 2, 1040 / 2, 1860 / 2, 1040 / 2);
 			else
-				ShowLab9(hWnd, 761, 424, 775, 376);
+				ShowLab9(hWnd, 1860 / 2, 1040 / 2, 1860 / 2, 1040 / 2);
 			break;
 		}
+		case ID_LAB_INFOABOUTLABS:
+		{
+			std::wstring infoAboutLabs = L"Date of lab 1: 24.10.2021 | Mark: 5\r\nDate of lab 2: 22.11.2021 | Mark: 5\r\nDate of lab 3: 13.12.2021 | Mark: 5\r\nDate of lab 4: 13.12.2021 | Mark: 5\r\nDate of lab 5: 07.05.2022 | Mark: 5\r\nDate of lab 6: 07.05.2022 | Mark: 5\r\nDate of lab 7: 24.05.2022 | Mark: 5\r\nDate of lab 8: 14.06.2022 | Mark: 5\r\nDate of lab 9: 14.06.2022 | Mark: 5";
+			MessageBox(hWnd, infoAboutLabs.c_str(), L"Labs info", MB_OK);
+			break;
+		}
+		case ID_EXTRAINFO_ABOUTPROGRAM:
+			MessageBox(hWnd, L"This program is a combination of all previous labs.", L"About", MB_OK);
+			break;
+		case ID_EXTRAINFO_AUTHORS:
+			MessageBox(hWnd, L"Authors: Viacheslav Zalitskyi, Dmitriy Kuznetsiv, Dmitriy Herasymchuk", L"Authors", MB_OK);
+			break;
+		case ID_EXTRAINFO_TIME:
+			SYSTEMTIME st;
+			GetSystemTime(&st);
+			string currentTime = "Current time: ";
+			currentTime += std::to_string(st.wHour + 3) + ":";
+			currentTime += std::to_string(st.wMinute);
+			wstring wCurrentTime = wstring(currentTime.begin(), currentTime.end());
+			MessageBox(hWnd, wCurrentTime.c_str(), L"Time", MB_OK);
+			break;
 		}
 
 	
@@ -1903,6 +1924,10 @@ LRESULT CALLBACK WndProc9(_In_ HWND   hWnd, _In_ UINT   message, _In_ WPARAM wPa
 //
 void AddComboBoxes(HWND hWnd)
 {
+	//  1860 / 2
+	//	1040/2
+	//	760
+	//	400
 	comboBoxA = CreateWindow(L"Combobox", NULL,
 		CBS_DROPDOWN | CBS_HASSTRINGS | WS_CHILD | WS_OVERLAPPED | WS_VISIBLE,
 		0, 0, 100, 100, hWnd, NULL, NULL,
@@ -1918,12 +1943,12 @@ void AddComboBoxes(HWND hWnd)
 	SendMessage(comboBoxA, CB_GETLBTEXT, (WPARAM)nIndex, (LPARAM)F);
 
 	HMENU comboBoxALabChosen = (HMENU)COMBOBOX_A_LAB_CHOSEN;
-	comboBoxAButton = CreateWindowExW(0L, L"Button", L"Run", WS_VISIBLE | WS_CHILD, 125, 0, 50, 23, hWnd, comboBoxALabChosen, NULL, NULL);
+	comboBoxAButton = CreateWindowExW(0L, L"Button", L"Run", WS_VISIBLE | WS_CHILD,  125, 0, 50, 23, hWnd, comboBoxALabChosen, NULL, NULL);
 
 
 	comboBoxB = CreateWindow(L"Combobox", NULL,
 		CBS_DROPDOWN | CBS_HASSTRINGS | WS_CHILD | WS_OVERLAPPED | WS_VISIBLE,
-		760, 0, 100, 100, hWnd, NULL, NULL,
+		1860 / 2, 0, 100, 100, hWnd, NULL, NULL,
 		NULL);
 	const TCHAR* ComboBoxItems2[] = { _T("Lab 4"), _T("Lab 5") };
 	SendMessage(comboBoxB, (UINT)CB_ADDSTRING, 0, (LPARAM)ComboBoxItems2[0]);
@@ -1934,12 +1959,12 @@ void AddComboBoxes(HWND hWnd)
 	SendMessage(comboBoxB, CB_GETLBTEXT, (WPARAM)nIndex, (LPARAM)F2);
 
 	HMENU comboBoxBLabChosen = (HMENU)COMBOBOX_B_LAB_CHOSEN;
-	comboBoxBButton = CreateWindowExW(0L, L"Button", L"Run", WS_VISIBLE | WS_CHILD, 895, 0, 50, 23, hWnd, comboBoxBLabChosen, NULL, NULL);
+	comboBoxBButton = CreateWindowExW(0L, L"Button", L"Run", WS_VISIBLE | WS_CHILD, 1860 / 2 + 125, 0, 50, 23, hWnd, comboBoxBLabChosen, NULL, NULL);
 
 
 	comboBoxC = CreateWindow(L"Combobox", NULL,
 		CBS_DROPDOWN | CBS_HASSTRINGS | WS_CHILD | WS_OVERLAPPED | WS_VISIBLE,
-		0, 400, 100, 100, hWnd, NULL, NULL,
+		0, 1040 / 2, 100, 100, hWnd, NULL, NULL,
 		NULL);
 	const TCHAR* ComboBoxItems3[] = { _T("Lab 6"), _T("Lab 7") };
 	SendMessage(comboBoxC, (UINT)CB_ADDSTRING, 0, (LPARAM)ComboBoxItems3[0]);
@@ -1950,12 +1975,12 @@ void AddComboBoxes(HWND hWnd)
 	SendMessage(comboBoxC, CB_GETLBTEXT, (WPARAM)nIndex, (LPARAM)F3);
 
 	HMENU comboBoxCLabChosen = (HMENU)COMBOBOX_C_LAB_CHOSEN;
-	comboBoxCButton = CreateWindowExW(0L, L"Button", L"Run", WS_VISIBLE | WS_CHILD, 125, 400, 50, 23, hWnd, comboBoxCLabChosen, NULL, NULL);
+	comboBoxCButton = CreateWindowExW(0L, L"Button", L"Run", WS_VISIBLE | WS_CHILD, 125, 1040 / 2, 50, 23, hWnd, comboBoxCLabChosen, NULL, NULL);
 
 
 	comboBoxD = CreateWindow(L"Combobox", NULL,
 		CBS_DROPDOWN | CBS_HASSTRINGS | WS_CHILD | WS_OVERLAPPED | WS_VISIBLE,
-		760, 400, 100, 100, hWnd, NULL, NULL,
+		1860 / 2, 1040 / 2, 100, 100, hWnd, NULL, NULL,
 		NULL);
 	const TCHAR* ComboBoxItems4[] = { _T("Lab 8"), _T("Lab 9") };
 	SendMessage(comboBoxD, (UINT)CB_ADDSTRING, 0, (LPARAM)ComboBoxItems4[0]);
@@ -1966,5 +1991,5 @@ void AddComboBoxes(HWND hWnd)
 	SendMessage(comboBoxC, CB_GETLBTEXT, (WPARAM)nIndex, (LPARAM)F4);
 
 	HMENU comboBoxDLabChosen = (HMENU)COMBOBOX_D_LAB_CHOSEN;
-	comboBoxDButton = CreateWindowExW(0L, L"Button", L"Run", WS_VISIBLE | WS_CHILD|BS_PUSHBUTTON, 895, 400, 50, 23, hWnd, comboBoxDLabChosen, NULL, NULL);
+	comboBoxDButton = CreateWindowExW(0L, L"Button", L"Run", WS_VISIBLE | WS_CHILD|BS_PUSHBUTTON, 1860 / 2 + 125, 1040 / 2, 50, 23, hWnd, comboBoxDLabChosen, NULL, NULL);
 }
